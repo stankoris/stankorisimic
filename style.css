@@ -3,7 +3,7 @@
 }
 
 :root {
-    --background-picture:  url('../images/night.jpg') no-repeat center center fixed;
+    --background-picture:  url('./images/night.jpg') no-repeat center center fixed;
     --text-color: white;
     --hover-color: rgb(0, 0, 0);
     scrollbar-color: rgb(255, 255, 255) rgb(0, 0, 0);
@@ -13,7 +13,7 @@
     --aVisited: blue;
 }
 .light-theme {
-    --background-picture: url('../images/day.jpg') no-repeat center center fixed;
+    --background-picture: url('./images/day.jpg') no-repeat center center fixed;
     --text-color: black;
     --hover-color: rgb(255, 255, 255);
     scrollbar-color: rgb(0, 0, 0) rgb(255, 255, 255);
