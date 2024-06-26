@@ -1,0 +1,614 @@
+* {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+:root {
+    --background-picture:  url('../images/night.jpg') no-repeat center center fixed;
+    --text-color: white;
+    --hover-color: rgb(0, 0, 0);
+    scrollbar-color: rgb(255, 255, 255) rgb(0, 0, 0);
+    --Title: #ff0000;
+    --profile-background: linear-gradient(to bottom, rgb(0, 14, 61), rgba(0, 5, 75, 0.664), rgba(0, 163, 192, 0.473), rgb(0, 238, 255));
+    --box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.7);
+    --aVisited: blue;
+}
+.light-theme {
+    --background-picture: url('../images/day.jpg') no-repeat center center fixed;
+    --text-color: black;
+    --hover-color: rgb(255, 255, 255);
+    scrollbar-color: rgb(0, 0, 0) rgb(255, 255, 255);
+    --Title: rgb(0, 47, 255);
+    --profile-background: linear-gradient(to bottom, rgba(0, 217, 255, 0.664), rgba(0, 78, 122, 0.651), rgba(0, 40, 100, 0.692), rgb(0, 13, 85));
+    --box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.7);
+    --aVisited: red;
+}
+
+#listButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;    
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-picture);
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+
+header, footer {
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+
+}
+
+header {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    position: sticky;
+    top: 0;
+}
+
+.header-scrolled {
+    background-color: var(--hover-color)
+}
+
+header nav {
+    align-self: center;
+}   
+
+header nav a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 3rem;
+    font-size: larger;
+    padding: 0.5rem;
+}
+
+header nav a:hover {
+    border-radius: 10px;
+    background-color: var(--text-color);
+    color: var(--hover-color);
+    box-shadow: var(--box-shadow);
+}
+
+.name {
+    height: auto;
+    padding: 0.5rem;
+}
+
+.name a {
+    text-decoration: none;
+    color: var(--Title);
+    margin: 0;
+    font-size: 40px;
+}
+
+.name h4 {
+    cursor:not-allowed;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    color: var(--text-color);
+}
+
+main {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    color: var(--text-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+main section {
+    margin-top: 10rem;
+}
+
+main h1 {
+    color: var(--Title);
+    margin-left: 1rem;
+}
+
+footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    border-top: 2px solid var(--text-color);
+    color: var(--text-color);
+    background-color: var(--hover-color);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+footer i {
+    cursor: pointer;
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin-right: 2rem;
+    font-size: 30px;
+}
+
+footer i:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+}
+
+#instagram:hover {
+    background: linear-gradient(to bottom, rgb(153, 0, 255), rgb(216, 36, 96), rgb(255, 0, 157), yellow);
+    border-radius: 10px;
+}
+
+#linkedin:hover {
+    color: blue;
+    background-color:white;
+    border-radius: 10px;
+}
+
+#github:hover {
+    color: var(--hover-color);
+    background-color: var(--text-color);
+    border-radius: 46%;
+}
+
+.theme-toggle {
+    width: 60px;
+    height: 30px;
+    background-color: #666;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-circle {
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: left 0.3s ease, background-image 0.3s ease;
+    background-size: cover;
+}
+
+.light-theme .theme-toggle {
+    background-color: #ccc;
+}
+
+.sun-icon {
+    background-image: url('../images/sun.png');
+}
+
+.moon-icon {
+    background-image: url('../images/moon.png');
+}
+
+.light-theme .toggle-circle {
+    left: 31px;
+}
+
+
+/* IZNAD JE SABLON */
+
+/* BANNER */
+.welcomeBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    height: 60vh;
+}
+
+/* ABOUT ME */
+.aboutMe .picture {
+    padding-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--profile-background);
+}
+
+.picture img {
+    width: auto;
+}
+
+.aboutMe article {
+    padding: 2rem;
+}
+
+.aboutMe a {
+    color: var(--text-color);
+}
+
+.gif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gif img {
+    width: 500px;
+    height: auto;
+}
+
+/* WORK EXPIRIENCE */
+.workExpirience li {
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.workExpirience li a {
+    display: block;
+}
+
+.workExpirience li:hover a {
+    color: var(--hover-color);
+    background-color: var(--text-color);
+    box-shadow: var(--box-shadow);
+}
+
+.workExpirience a:visited {
+    color: var(--aVisited);
+}
+
+.workExpirience a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* PROJECTS */
+.videoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    
+.projects a {
+    color: var(--text-color);
+}
+
+.projects a:hover {
+    color: var(--aVisited);
+}
+
+.projects a:visited {
+    color: var(--aVisited);
+}
+
+/* SKILLS */
+#skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.iconDivContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.iconDivContainer img {
+    padding: 1rem;
+    width: 150px;
+    height: 150px;
+    transition: width 2s ease, height 2s ease;
+}
+
+.iconDivContainer img:hover {
+    width: 200px;
+    height: 200px;
+}
+
+.iconDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: auto;
+    margin-right: 3rem;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: url('../images/HomeWallpaper.png') repeat;
+    animation: moveBackground 40s linear infinite;
+}
+
+.background:active {
+    animation: stopBackground 40s linear infinite;
+}
+
+.background img {
+    background: var(--background-picture) no-repeat center center fixed;
+    background-size: cover;
+    border-radius: 30px;
+}
+
+
+@keyframes stopBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -100% 0; 
+    }
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0; 
+    }
+}
+
+
+/* ****************************************************************************************************************** */
+/* ISPOD POSTAVLJAM CSS ZA TABLET */
+/* ****************************************************************************************************************** */
+
+@media screen and (min-width: 720px) {
+    #listMobile {
+        display: none;
+    }
+    
+    #listButton {
+        display: none;  
+    }
+}
+
+ @media screen  and (max-height: 760px) {
+    footer {
+        display: none;
+    }
+} 
+
+@media screen  and (max-width: 1450px) {
+
+    footer {
+        display: none;
+    }
+
+
+    #listButton {
+        display: none;
+    }
+
+    header {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: auto;
+        position: sticky;
+        top: 0;
+    }
+    
+    .header-scrolled {
+        background-color: var(--hover-color)
+    }
+    
+    header nav {
+        align-self: center;
+    }   
+    
+    header nav a {
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--text-color);
+        margin-left: 0.5rem;
+        font-size: larger;
+    }
+    
+    .name {
+        height: auto;
+        padding: 0.5rem;
+    }
+    
+    .name a {
+        text-decoration: none;
+        color: var(--Title);
+        margin: 0;
+        font-size: 40px;
+    }
+    
+    .name h4 {
+        cursor:not-allowed;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        color: var(--text-color);
+    }
+
+    /* IZNAD JE SABLON */
+    .welcomeBanner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+
+} 
+
+/* ****************************************************************************************************************** */
+/* ISPOD POSTAVLJAM CSS ZA TELEFON */
+/* ****************************************************************************************************************** */
+
+
+@media screen  and (max-width: 720px) {
+
+.listPc {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+body, html {
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: auto;
+
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: var(--hover-color);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+#listButton {
+    display: flex;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2000;
+    font-size: 36px;
+}
+
+#closeButton {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 24px;
+}
+
+#listMobile {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(173, 173, 173);
+    z-index: 3000;
+    transition: left 0.3s ease;
+}
+
+#listMobile a {
+    text-decoration: none;
+    font-size: 26px;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    color: black;
+}
+
+.listIcons {
+    display: flex;
+    margin-top: 10rem;
+    justify-content: start;
+    width: 100%;
+}
+
+/* PROJECTS */
+.projects video {
+    width: 400px;
+    height: auto;
+}
+
+/* SKILLS */
+
+.iconDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: auto;
+    margin-right: 3dvi;
+}
+
+.iconDiv img {
+    width: 100px;
+    height: auto;
+
+}
+
+.iconDiv img:hover {
+    width: 100px;
+    height: auto;
+}
+
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: url('../images/HomeWallpaper.png') repeat;
+    animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0; 
+    }
+}
+    
+}

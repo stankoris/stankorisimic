@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+    <style>
+        :root {
+            --background-picture: url('../images/background.png') no-repeat center center fixed;
+        }
+
+        .dark-theme {
+            --background-picture: url('../images/wp2333287.png') no-repeat center center fixed;
+        }
+
+        body, html {
+            background-color: rgb(0, 0, 0);
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: var(--background-picture);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle">Toggle Theme</button>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>

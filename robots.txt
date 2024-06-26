@@ -1,0 +1,4 @@
+User-agent: *
+Dissalow:
+
+Sitemap: https://stankoris.github.io/Portfolio2/sitemap.xml
