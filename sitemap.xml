@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://stankoris.github.io/Portfolio2/index.html</loc>
+        <loc>https://stankoris.github.io/stankorisimic/index.html</loc>
+    </url>
+    <url>
+        <loc>https://stankoris.github.io/stankorisimic/contact.html</loc>
     </url>
 </urlset>
