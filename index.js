@@ -72,7 +72,7 @@ themeToggleBtn.addEventListener('click', () => {
 // KOD ZA PRIKAZIVANJE HEADERA
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header');
-    const listButton = document.querySelector('.listButton');
+    const listButton = document.getElementById("listButton");
 
     window.addEventListener('scroll', function () {
         if (window.innerWidth > 720) {

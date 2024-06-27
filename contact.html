@@ -200,8 +200,93 @@ header nav a:hover {
     left: 31px;
 }
 /* ****************************************************************************************************************** */
+/* ISPOD POSTAVLJAM CSS ZA TABLET */
+/* ****************************************************************************************************************** */
+
+@media screen and (min-width: 720px) {
+    #listMobile {
+        display: none;
+    }
+    
+    #listButton {
+        display: none;  
+    }
+}
+
+ @media screen  and (max-height: 760px) {
+    footer {
+        display: none;
+    }
+} 
+
+@media screen  and (max-width: 1450px) {
+
+    footer {
+        display: none;
+    }
+
+
+    #listButton {
+        display: none;
+    }
+
+    header {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: auto;
+        position: sticky;
+        top: 0;
+    }
+    
+    .header-scrolled {
+        background-color: var(--hover-color)
+    }
+    
+    header nav {
+        align-self: center;
+    }   
+    
+    header nav a {
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--text-color);
+        margin-left: 0.5rem;
+        font-size: larger;
+    }
+    
+    .name {
+        height: auto;
+        padding: 0.5rem;
+    }
+    
+    .name a {
+        text-decoration: none;
+        color: var(--Title);
+        margin: 0;
+        font-size: 40px;
+    }
+    
+    .name h4 {
+        cursor:not-allowed;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        color: var(--text-color);
+    }
+} 
+
+/* ****************************************************************************************************************** */
 /* ISPOD POSTAVLJAM CSS ZA TELEFON */
 /* ****************************************************************************************************************** */
+
 
 @media screen  and (max-width: 720px) {
 
@@ -213,12 +298,38 @@ footer {
     display: none;
 }
 
+body, html {
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: auto;
+
+}
+
 header {
     display: flex;
     justify-content: center;
     position: fixed;
     top: 0;
     background-color: var(--hover-color);
+}
+
+.name {
+    height: auto;
+}
+
+.name a {
+    text-decoration: none;
+    color: var(--Title);
+    margin: 0;
+    font-size: 30px;
+}
+
+.name h4 {
+    cursor:not-allowed;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    color: var(--text-color);
 }
 
 .theme-toggle {
@@ -272,8 +383,105 @@ header {
     justify-content: start;
     width: 100%;
 }
-
 }
+
+@media screen  and (max-width: 500px)  {
+    .listPc {
+        display: none;
+    }
+    
+    footer {
+        display: none;
+    }
+    
+    body, html {
+        box-sizing: border-box;
+        width: 100%;
+        overflow-x: auto;
+    
+    }
+    
+    header {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        background-color: var(--hover-color);
+    }
+    
+    .name {
+        height: auto;
+    }
+    
+    .name a {
+        text-decoration: none;
+        color: var(--Title);
+        margin: 0;
+        font-size: 20px;
+    }
+    
+    .name h4 {
+        cursor:not-allowed;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        color: var(--text-color);
+        font-size: 10px;
+    }
+    
+    .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    #listButton {
+        display: flex;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 2000;
+        font-size: 20px;
+    }
+    
+    #closeButton {
+        display: none;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        font-size: 20px;
+    }
+    
+    #listMobile {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(173, 173, 173);
+        z-index: 3000;
+        transition: left 0.3s ease;
+    }
+    
+    #listMobile a {
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 1rem;
+        margin-left: 2rem;
+        color: black;
+    }
+    
+    .listIcons {
+        display: flex;
+        margin-top: 10rem;
+        justify-content: start;
+        width: 100%;
+    }
+}
+
     </style>
 </head>
 <body>

@@ -201,11 +201,11 @@ footer i:hover {
 }
 
 .sun-icon {
-    background-image: url('../images/sun.png');
+    background-image: url('./images/sun.png');
 }
 
 .moon-icon {
-    background-image: url('../images/moon.png');
+    background-image: url('./images/moon.png');
 }
 
 .light-theme .toggle-circle {
@@ -354,7 +354,7 @@ footer i:hover {
     align-items: center;
     width: 100%;
     height: auto;
-    background: url('../images/HomeWallpaper.png') repeat;
+    background: url('./images/HomeWallpaper.png') repeat;
     animation: moveBackground 40s linear infinite;
 }
 
@@ -511,6 +511,25 @@ header {
     background-color: var(--hover-color);
 }
 
+.name {
+    height: auto;
+}
+
+.name a {
+    text-decoration: none;
+    color: var(--Title);
+    margin: 0;
+    font-size: 30px;
+}
+
+.name h4 {
+    cursor:not-allowed;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    color: var(--text-color);
+}
+
 .theme-toggle {
     position: fixed;
     top: 1rem;
@@ -563,6 +582,11 @@ header {
     width: 100%;
 }
 
+/* BANNER */
+.welcomeBanner img {
+    width: 500px;
+}
+
 /* PROJECTS */
 .projects video {
     width: 400px;
@@ -591,24 +615,135 @@ header {
     height: auto;
 }
 
-
-.background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    background: url('../images/HomeWallpaper.png') repeat;
-    animation: moveBackground 10s linear infinite;
 }
 
-@keyframes moveBackground {
-    from {
-        background-position: 0 0;
+@media screen  and (max-width: 500px)  {
+    .listPc {
+        display: none;
     }
-    to {
-        background-position: 100% 0; 
+    
+    footer {
+        display: none;
     }
-}
+    
+    body, html {
+        box-sizing: border-box;
+        width: 100%;
+        overflow-x: auto;
+    
+    }
+    
+    header {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        background-color: var(--hover-color);
+    }
+    
+    .name {
+        height: auto;
+    }
+    
+    .name a {
+        text-decoration: none;
+        color: var(--Title);
+        margin: 0;
+        font-size: 20px;
+    }
+    
+    .name h4 {
+        cursor:not-allowed;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        color: var(--text-color);
+        font-size: 10px;
+    }
+    
+    .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    #listButton {
+        display: flex;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 2000;
+        font-size: 20px;
+    }
+    
+    #closeButton {
+        display: none;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        font-size: 20px;
+    }
+    
+    #listMobile {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(173, 173, 173);
+        z-index: 3000;
+        transition: left 0.3s ease;
+    }
+    
+    #listMobile a {
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 1rem;
+        margin-left: 2rem;
+        color: black;
+    }
+    
+    .listIcons {
+        display: flex;
+        margin-top: 10rem;
+        justify-content: start;
+        width: 100%;
+    }
+    
+    /* BANNER */
+    .welcomeBanner img {
+        width: 300px;
+    }
+    
+    /* PROJECTS */
+    .projects video {
+        width: 300px;
+        height: auto;
+    }
+    
+    /* SKILLS */
+    
+    .iconDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: auto;
+        margin-right: 3dvi;
+    }
+    
+    .iconDiv img {
+        width: 80px;
+        height: auto;
+    
+    }
+    
+    .iconDiv img:hover {
+        width: 80px;
+        height: auto;
+    }
     
 }
