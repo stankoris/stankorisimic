@@ -91,25 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-//KOD ZA PUSTANJE VIDEA KAD SE STAVI MIS PREKO
-const quizVideo = document.getElementById('quizVideo');
-const calculatorVideo = document.getElementById('calculatorVideo');
-
-function playVideoOnHover(video) {
-    video.addEventListener('mouseenter', () => {
-        video.play();
-    });
-
-    video.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0;
-    });
-}
-playVideoOnHover(quizVideo);
-playVideoOnHover(calculatorVideo);
-
-
 // JS ZA SAT
 function updateClock() {
     const clock = document.getElementById('clock');

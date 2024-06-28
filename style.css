@@ -10,7 +10,11 @@
     --Title: #ff0000;
     --profile-background: linear-gradient(to bottom, rgb(0, 14, 61), rgba(0, 5, 75, 0.664), rgba(0, 163, 192, 0.473), rgb(0, 238, 255));
     --box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.7);
-    --aVisited: blue;
+    --projects-efect: linear-gradient(to bottom, rgba(0, 14, 61, 0.527), rgba(0, 62, 134, 0.411),  rgba(0, 124, 155, 0.664), rgba(0, 253, 241, 0.664));
+    --projects-hover: linear-gradient(to bottom, rgb(0, 14, 61), rgb(0, 62, 134),  rgb(0, 124, 155), rgb(0, 253, 240));
+    --projects-upper-text: rgb(255, 255, 255);
+    --projects-middle-text: rgb(180, 180, 180);
+    --projects-lower-text: rgb(0, 0, 0);
 }
 .light-theme {
     --background-picture: url('./images/day.jpg') no-repeat center center fixed;
@@ -20,7 +24,11 @@
     --Title: rgb(0, 47, 255);
     --profile-background: linear-gradient(to bottom, rgba(0, 217, 255, 0.664), rgba(0, 78, 122, 0.651), rgba(0, 40, 100, 0.692), rgb(0, 13, 85));
     --box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.7);
-    --aVisited: red;
+    --projects-efect: linear-gradient(to bottom, rgba(0, 238, 255, 0.527), rgba(0, 168, 190, 0.411),  rgba(0, 92, 196, 0.521), rgba(0, 60, 255, 0.514));
+    --projects-hover: linear-gradient(to bottom, rgb(0, 238, 255), rgb(0, 168, 190),  rgb(0, 92, 196), rgb(0, 60, 255));
+    --projects-upper-text: rgb(0, 0, 0);
+    --projects-middle-text: rgb(168, 168, 168);
+    --projects-lower-text: rgb(255, 255, 255);
 }
 
 #listButton {
@@ -49,7 +57,6 @@ header, footer {
     padding-left: 1rem;
     padding-right: 1rem;
     align-items: center;
-
 }
 
 header {
@@ -59,6 +66,7 @@ header {
     height: auto;
     position: sticky;
     top: 0;
+    z-index: 2000;
 }
 
 .header-scrolled {
@@ -260,10 +268,6 @@ footer i:hover {
     box-shadow: var(--box-shadow);
 }
 
-.workExpirience a:visited {
-    color: var(--aVisited);
-}
-
 .workExpirience a {
     text-decoration: none;
     color: var(--text-color);
@@ -272,29 +276,48 @@ footer i:hover {
 /* PROJECTS */
 .videoContainer {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: auto;
 }
 
 .projects {
-    width: 100%;
+    width: 22rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 25rem;
+    background: var(--projects-efect);
+    margin: 1rem;
+    filter: blur(10px);
+    padding: 0.5rem;
+    border-radius: 50px;
+    z-index: 1000;
+}
+
+.projects:hover {
+    width: 22rem;
+    height: 25rem;
+    background: var(--projects-hover);
+    margin: 1rem;
+    border-radius: 50px;
+    filter: blur(0);
+}
+
+.projectsUpperText {
+    color: var(--projects-upper-text);
+}
+
+.projectsMiddleText {
+    font-weight: bold;
+    color: var(--projects-middle-text);
 }
     
-.projects a {
-    color: var(--text-color);
-}
-
-.projects a:hover {
-    color: var(--aVisited);
-}
-
-.projects a:visited {
-    color: var(--aVisited);
+.projectsLowerText {
+    color: var(--projects-lower-text);
 }
 
 /* SKILLS */
@@ -720,7 +743,6 @@ header {
         align-items: center;
         width: 30%;
         height: auto;
-        margin-right: 3dvi;
     }
     
     .iconDiv img {
