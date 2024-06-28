@@ -16,6 +16,7 @@
     --projects-middle-text: rgb(180, 180, 180);
     --projects-lower-text: rgb(0, 0, 0);
 }
+
 .light-theme {
     --background-picture: url('./images/day.jpg') no-repeat center center fixed;
     --text-color: black;
