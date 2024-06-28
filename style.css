@@ -125,6 +125,8 @@ main h1 {
 
 footer {
     padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -373,6 +375,16 @@ footer i:hover {
     }
 }
 
+#clock {
+    font-size: 2rem;
+    background: var(--text-color);
+    color: var(--hover-color);
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+}
+
 
 /* ****************************************************************************************************************** */
 /* ISPOD POSTAVLJAM CSS ZA TABLET */
@@ -388,17 +400,7 @@ footer i:hover {
     }
 }
 
- @media screen  and (max-height: 760px) {
-    footer {
-        display: none;
-    }
-} 
-
 @media screen  and (max-width: 1450px) {
-
-    footer {
-        display: none;
-    }
 
 
     #listButton {
