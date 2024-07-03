@@ -277,19 +277,20 @@ footer i:hover {
 /* PROJECTS */
 .videoContainer {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
+    box-sizing: border-box;
 }
 
 .projects {
     width: 22rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
     height: 25rem;
     background: var(--projects-efect);
     margin: 1rem;
@@ -309,15 +310,24 @@ footer i:hover {
 }
 
 .projectsUpperText {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     color: var(--projects-upper-text);
 }
 
 .projectsMiddleText {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     font-weight: bold;
     color: var(--projects-middle-text);
 }
     
 .projectsLowerText {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     color: var(--projects-lower-text);
 }
 
