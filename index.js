@@ -105,3 +105,34 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// JAVASCRIPT ZA SLANJE EMAILA
+(function(){
+    emailjs.init("W25WDP_Enya0jZAgr");
+})();
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let firstName = document.getElementById('firstName').value;
+    let text = document.getElementById('text').value;
+    let email = document.getElementById('email').value;
+
+    let templateParams = {
+        from_name: firstName,
+        message: text,
+        from_email: email,
+        to_name: 'Stanko'
+    };
+
+    emailjs.send('service_n7ekf1n', 'template_pt06je4', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Poruka je uspešno poslata.');
+            document.getElementById('firstName').value = "";
+            document.getElementById('text').value = "";
+            document.getElementById('email').value = "";
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Došlo je do greške prilikom slanja poruke.');
+        });
+});

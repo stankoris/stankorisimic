@@ -89,8 +89,6 @@ header nav a {
 
 header nav a:hover {
     border-radius: 10px;
-    background-color: var(--text-color);
-    color: var(--hover-color);
     box-shadow: var(--box-shadow);
 }
 
@@ -128,7 +126,7 @@ main section {
 }
 
 main h1 {
-    color: var(--Title);
+    color: var(--text-color);
     margin-left: 1rem;
 }
 
@@ -162,12 +160,7 @@ footer i {
 }
 
 footer i:hover {
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
-}
-
-#instagram:hover {
-    background: linear-gradient(to bottom, rgb(153, 0, 255), rgb(216, 36, 96), rgb(255, 0, 157), yellow);
-    border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 #linkedin:hover {
@@ -180,6 +173,16 @@ footer i:hover {
     color: var(--hover-color);
     background-color: var(--text-color);
     border-radius: 46%;
+}
+
+#clock {
+    font-size: 2rem;
+    background: var(--text-color);
+    color: var(--hover-color);
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto;
 }
 
 .theme-toggle {
@@ -243,6 +246,7 @@ footer i:hover {
 
 .picture img {
     width: auto;
+    box-sizing: border-box;
 }
 
 .aboutMe article {
@@ -250,27 +254,6 @@ footer i:hover {
 }
 
 .aboutMe a {
-    color: var(--text-color);
-}
-
-/* WORK EXPIRIENCE */
-.workExpirience li {
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-.workExpirience li a {
-    display: block;
-}
-
-.workExpirience li:hover a {
-    color: var(--hover-color);
-    background-color: var(--text-color);
-    box-shadow: var(--box-shadow);
-}
-
-.workExpirience a {
-    text-decoration: none;
     color: var(--text-color);
 }
 
@@ -409,16 +392,45 @@ footer i:hover {
     }
 }
 
-#clock {
-    font-size: 2rem;
-    background: var(--text-color);
-    color: var(--hover-color);
-    padding: 0.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: auto;
+/* CONTACT */
+#contact {
+    box-sizing: border-box;
+}
+.contactMainDiv {
+    margin-left: 3rem;
+}
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    height: 22rem;
+    border-radius: 20px;
+    padding: 1rem;
+    border: 3px dotted var(--text-color);
 }
 
+#contact-form input {
+    height: 2.5rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+
+#contact-form textarea {
+    height: 10rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+
+#contact-form button {
+    align-self: flex-end;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+#contact-form button:hover {
+    background-color: #ccc;
+}
 
 /* ****************************************************************************************************************** */
 /* ISPOD POSTAVLJAM CSS ZA TABLET */
@@ -493,6 +505,10 @@ footer i:hover {
         color: var(--text-color);
     }
 
+    main section {
+        margin-top: 5rem;
+    }
+
     /* IZNAD JE SABLON */
     .welcomeBanner {
         display: flex;
@@ -501,6 +517,30 @@ footer i:hover {
         height: 50vh;
     }
 
+    /* ABOUT */
+    .picture img {
+        width: auto;
+        box-sizing: border-box;
+        width: 25rem;
+    }
+
+    /* CONTACT */
+    #contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    .contactMainDiv {
+        margin: 0;
+    }
+
+    #contact h1 {
+        margin: 0;
+        margin-bottom: 1rem;
+        margin-top: 5rem;
+    }
 } 
 
 /* ****************************************************************************************************************** */
@@ -572,7 +612,8 @@ header {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    font-size: 24px;
+    font-size: 20px;
+    height: 26px;
 }
 
 #listMobile {
@@ -739,6 +780,13 @@ header {
     .welcomeBanner img {
         width: 300px;
     }
+
+    /* ABOUT */
+    .picture img {
+        width: auto;
+        box-sizing: border-box;
+        width: 300px;
+    }
     
     /* PROJECTS */
     .projects video {
@@ -747,7 +795,6 @@ header {
     }
     
     /* SKILLS */
-    
     .iconDiv {
         display: flex;
         justify-content: center;
@@ -767,4 +814,15 @@ header {
         height: auto;
     }
     
+    /* CONTACT */
+    #contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        border: 2px solid red;
+        padding: 0;
+    }
 }
+
